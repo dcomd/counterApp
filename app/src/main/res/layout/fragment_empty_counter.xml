@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.alexandre.counters.ui.EmptyCounterFragment">
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/couldn_t_load_the_counters"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:layout_margin="@dimen/size_10dp"
+        android:text="@string/the_internet_connection_appears_to_be_offline"
+        android:fontFamily="sans-serif"
+        android:textSize="17sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView"/>
+
+    <TextView
+        android:id="@+id/idRetry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:layout_margin="@dimen/size_30dp"
+        android:text="@string/retry"
+        android:textColor="@color/orange"
+        android:fontFamily="sans-serif"
+        android:textSize="17sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView2"/>
+
+    <Button
+        android:id="@+id/AddButton"
+        android:layout_width="@dimen/size_150dp"
+        android:layout_height="@dimen/size_40dp"
+        android:background="@drawable/around_button"
+        android:layout_marginTop="@dimen/size_80dp"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:text="@string/add_counter"
+        android:layout_marginBottom="@dimen/size_40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

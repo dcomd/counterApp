@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_counter"
+    tools:context="com.alexandre.counters.ui.CounterFragment">
+
+    <androidx.appcompat.widget.Toolbar
+       android:visibility="invisible"
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        app:title="1 selected"
+        app:titleTextColor="#888B90"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="4dp"/>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/inputSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search counters"
+        android:textCursorDrawable="@null"
+        app:iconifiedByDefault="false"
+        app:queryBackground="@null"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:drawableLeft="@android:drawable/ic_menu_search"
+        android:background="@drawable/search_around"/>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:gravity="center"
+        android:progressDrawable="@drawable/circular_progress_bar"
+        android:background="@drawable/circle_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/AddCounter"
+        android:layout_width="@dimen/size_150dp"
+        android:layout_height="@dimen/size_40dp"
+        android:background="@drawable/around_button"
+        android:layout_marginTop="@dimen/size_80dp"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:text="@string/add_counter"
+        android:layout_margin="@dimen/size_20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:background="@android:color/white"
+        android:layout_marginTop="@dimen/size_20dp"
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar"
+        app:layout_constraintStart_toStartOf="@id/my_toolbar"
+        app:layout_constraintEnd_toEndOf="@id/my_toolbar"
+        android:layout_marginLeft="@dimen/size_20dp"
+        android:layout_marginRight="@dimen/size_20dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
