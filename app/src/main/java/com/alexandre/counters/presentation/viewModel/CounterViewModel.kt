@@ -17,6 +17,8 @@ import kotlinx.coroutines.launch
 abstract class CounterViewModel : ViewModel() {
     abstract val fetchData: LiveData<List<Counters>>
     abstract val initProgress: LiveData<Boolean>
+    abstract val totalItens: LiveData<Int>
+    abstract val totalSubItens: LiveData<Int>
     abstract fun fetchList()
     abstract fun delete(countersToBeDeletedIds: Int)
     abstract fun update(counters: Counters)
@@ -32,6 +34,8 @@ class CounterViewModelImp(
 
     override val fetchData = MutableLiveData<List<Counters>>()
     override val initProgress = MutableLiveData<Boolean>()
+    override val totalItens = MutableLiveData<Int>()
+    override val totalSubItens = MutableLiveData<Int>()
 
     override fun fetchList() {
         initProgress.postValue(true)
@@ -40,6 +44,9 @@ class CounterViewModelImp(
                 val repo = getCounters.invoke("")
                 fetchData.postValue(repo)
                 initProgress.postValue(false)
+                val total = repo.sumBy { it.count }
+                totalItens.postValue(repo.size)
+                totalSubItens.postValue(total)
 
             } catch (e: Throwable) {
                 initProgress.postValue(false)
@@ -48,33 +55,40 @@ class CounterViewModelImp(
     }
 
 
-   override fun delete(id: Int){
+    override fun delete(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-             deleteCounters.invoke(id)
-
+                deleteCounters.invoke(id)
+                getSumItens()
             } catch (e: Throwable) {
-             Log.d("Wrong at delete", e.message.toString())
+                Log.d("Wrong at delete", e.message.toString())
             }
         }
+    }
+
+    private suspend fun getSumItens() {
+        val repo = getCounters.invoke("")
+        val total = repo.sumBy { it.count }
+        totalItens.postValue(repo.size)
+        totalSubItens.postValue(total)
     }
 
     override fun update(counters: Counters) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val countersResponse = CountersDTO(counters.id, counters.title , counters.count)
+                val countersResponse = CountersDTO(counters.id, counters.title, counters.count)
                 update.invoke(countersResponse)
-
+                getSumItens()
             } catch (e: Throwable) {
                 Log.d("Wrong at update", e.message.toString())
             }
         }
     }
 
-  override  fun create(counters: Counters){
+    override fun create(counters: Counters) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val countersResponse = CountersDTO(counters.id, counters.title , counters.count)
+                val countersResponse = CountersDTO(counters.id, counters.title, counters.count)
                 createCounter.invoke(countersResponse)
 
             } catch (e: Throwable) {

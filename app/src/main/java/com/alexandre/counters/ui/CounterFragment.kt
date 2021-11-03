@@ -95,6 +95,13 @@ class CounterFragment : Fragment(R.layout.fragment_counter) {
             }
         })
 
+        viewModel.totalItens.observe(this, Observer {
+            binding.totalItemCount.text = "${it} items"
+        })
+        viewModel.totalSubItens.observe(this, Observer {
+            binding.totalTimesCount.text = "${it} times"
+        })
+
         viewModel.fetchData.observe(this, Observer { list ->
             if (CounterCheckInternet.isNetworkAvailable(requireContext())) {
                 if (list.isEmpty()) {

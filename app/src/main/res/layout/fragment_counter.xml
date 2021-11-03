@@ -63,15 +63,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/totalItemCount"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_10dp"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/my_toolbar"
+        app:layout_constraintHorizontal_bias="0.017"
+        app:layout_constraintStart_toStartOf="@id/my_toolbar"
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar"
+        tools:text="4 items" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/totalTimesCount"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_10dp"
+        android:textColor="?android:textColorSecondary"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/totalItemCount"
+        app:layout_constraintTop_toTopOf="@id/totalItemCount"
+        tools:text="17 times" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:background="@android:color/white"
         android:layout_marginTop="@dimen/size_20dp"
         android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/my_toolbar"
-        app:layout_constraintStart_toStartOf="@id/my_toolbar"
-        app:layout_constraintEnd_toEndOf="@id/my_toolbar"
+        app:layout_constraintTop_toBottomOf="@id/totalItemCount"
+        app:layout_constraintStart_toStartOf="@id/totalItemCount"
+        app:layout_constraintEnd_toEndOf="@id/totalItemCount"
         android:layout_marginLeft="@dimen/size_20dp"
         android:layout_marginRight="@dimen/size_20dp" />
 
