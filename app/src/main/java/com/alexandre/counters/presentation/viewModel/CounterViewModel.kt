@@ -23,6 +23,7 @@ abstract class CounterViewModel : ViewModel() {
     abstract fun delete(countersToBeDeletedIds: Int)
     abstract fun update(counters: Counters)
     abstract fun create(counters: Counters)
+    abstract fun getSumItens(counters: List<Counters>)
 }
 
 class CounterViewModelImp(
@@ -44,9 +45,7 @@ class CounterViewModelImp(
                 val repo = getCounters.invoke("")
                 fetchData.postValue(repo)
                 initProgress.postValue(false)
-                val total = repo.sumBy { it.count }
-                totalItens.postValue(repo.size)
-                totalSubItens.postValue(total)
+                getSumItens(repo)
 
             } catch (e: Throwable) {
                 initProgress.postValue(false)
@@ -59,17 +58,17 @@ class CounterViewModelImp(
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 deleteCounters.invoke(id)
-                getSumItens()
+                val repo = getCounters.invoke("")
+                getSumItens(repo)
             } catch (e: Throwable) {
                 Log.d("Wrong at delete", e.message.toString())
             }
         }
     }
 
-    private suspend fun getSumItens() {
-        val repo = getCounters.invoke("")
-        val total = repo.sumBy { it.count }
-        totalItens.postValue(repo.size)
+    override fun getSumItens(list: List<Counters>) {
+        val total = list.sumBy { it.count }
+        totalItens.postValue(list.size)
         totalSubItens.postValue(total)
     }
 
@@ -78,7 +77,8 @@ class CounterViewModelImp(
             try {
                 val countersResponse = CountersDTO(counters.id, counters.title, counters.count)
                 update.invoke(countersResponse)
-                getSumItens()
+                val repo = getCounters.invoke("")
+                 getSumItens(repo)
             } catch (e: Throwable) {
                 Log.d("Wrong at update", e.message.toString())
             }
