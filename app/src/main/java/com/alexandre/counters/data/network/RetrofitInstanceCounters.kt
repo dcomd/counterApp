@@ -1,4 +1,4 @@
-package com.example.counters.data.network
+package com.alexandre.counters.data.network
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
@@ -9,12 +9,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
+private const val REQUEST_TIMEOUT = 60L
+private  const val BASE_URL = "http://10.0.2.2:3000/api/"
 object RetrofitInstanceCounters {
     fun getRetrofit(): BackEndClientCounters {
-
-        val REQUEST_TIMEOUT = 60L
-        val BASE_URL = "http://10.0.2.2:3000/api/"
-
         val client = OkHttpClient.Builder()
             .readTimeout(REQUEST_TIMEOUT, TimeUnit.SECONDS)
             .writeTimeout(REQUEST_TIMEOUT, TimeUnit.SECONDS)
@@ -37,4 +35,5 @@ object RetrofitInstanceCounters {
 
         return retrofit.create(BackEndClientCounters::class.java)
     }
+
 }

@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.room.Room
 import com.alexandre.counters.data.dbnetwork.CounterDao
 import com.alexandre.counters.data.dbnetwork.CounterDatabse
-import com.alexandre.counters.domain.repository.CounterRespository
+import com.alexandre.counters.data.repository.CounterRepository
 import com.alexandre.counters.domain.useCase.CreateCounter
 import com.alexandre.counters.domain.useCase.DeleteCounters
 import com.alexandre.counters.domain.useCase.GetCounters
@@ -16,7 +16,7 @@ import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val appModule = module {
-    single { CounterRespository(get()) }
+    single { CounterRepository(get()) }
     factory { CreateCounter(get()) }
     factory { Update(get()) }
     factory { DeleteCounters(get()) }

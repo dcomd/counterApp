@@ -1,4 +1,4 @@
-package com.example.counters
+package com.alexandre.counters
 
 import android.app.Application
 import com.alexandre.counters.di.appModule

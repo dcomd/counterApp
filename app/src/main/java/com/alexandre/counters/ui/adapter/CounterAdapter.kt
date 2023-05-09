@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.counters.R
 import com.alexandre.counters.domain.model.Counters
 import com.example.counters.utils.AlertConection
-import com.example.counters.utils.CounterCheckInternet
+import com.alexandre.counters.utils.CounterCheckInternet
 import com.alexandre.counters.presentation.viewModel.CounterViewModel
 import java.util.*
 

@@ -9,7 +9,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.counters.R
 import com.alexandre.counters.ui.AddCounterFragment
-import com.example.counters.utils.Navigate
+import com.alexandre.counters.utils.Navigate
 
 class ExemplosCounterAdpater (val list: List<String>, private val fragmentManagerParam: FragmentManager): RecyclerView.Adapter<ExemplosCounterAdpater.ViewHolder>(){
      private val fragmentManager: FragmentManager = fragmentManagerParam

@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import com.example.counters.R
 import com.example.counters.databinding.CounterInitBinding
-import com.example.counters.utils.Navigate
+import com.alexandre.counters.utils.Navigate
 
 class CounterInitFragment : Fragment(R.layout.counter_init) {
     private lateinit var binding: CounterInitBinding

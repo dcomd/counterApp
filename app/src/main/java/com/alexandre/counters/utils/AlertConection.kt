@@ -3,6 +3,7 @@ import android.app.AlertDialog
 import android.content.Context
 import com.example.counters.R
 import com.alexandre.counters.ui.adapter.CounterAdapter
+import com.alexandre.counters.utils.CounterCheckInternet
 
 object AlertConection {
 

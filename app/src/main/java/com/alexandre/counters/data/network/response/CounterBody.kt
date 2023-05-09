@@ -1,4 +1,4 @@
-package com.example.counters.data.network.response
+package com.alexandre.counters.data.network.response
 
 import com.squareup.moshi.Json
 

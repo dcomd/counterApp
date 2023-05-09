@@ -1,9 +1,8 @@
-package com.example.counters.utils
+package com.alexandre.counters.utils
 
 import android.content.Context
 import android.content.Intent
 import androidx.core.content.ContextCompat.startActivity
-
 
 object ShareComponent {
 

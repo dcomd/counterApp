@@ -11,9 +11,9 @@ import com.example.counters.databinding.FragmentCounterBinding
 import com.alexandre.counters.domain.model.Counters
 import com.alexandre.counters.ui.adapter.CounterAdapter
 import com.example.counters.utils.AlertConection
-import com.example.counters.utils.CounterCheckInternet
-import com.example.counters.utils.Navigate
-import com.example.counters.utils.ShareComponent
+import com.alexandre.counters.utils.CounterCheckInternet
+import com.alexandre.counters.utils.Navigate
+import com.alexandre.counters.utils.ShareComponent
 import com.alexandre.counters.presentation.viewModel.CounterViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 

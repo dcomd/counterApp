@@ -1,4 +1,4 @@
-package com.example.counters.utils
+package com.alexandre.counters.utils
 
 import android.content.Context
 import android.net.ConnectivityManager

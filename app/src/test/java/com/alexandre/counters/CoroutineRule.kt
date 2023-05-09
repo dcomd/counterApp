@@ -1,4 +1,4 @@
-package com.example.counters
+package com.alexandre.counters
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

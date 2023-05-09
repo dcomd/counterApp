@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import com.example.counters.R
 import com.example.counters.databinding.FragmentEmptyCounterBinding
-import com.example.counters.utils.Navigate
+import com.alexandre.counters.utils.Navigate
 
 class EmptyCounterFragment : Fragment(R.layout.fragment_empty_counter) {
 

@@ -1,4 +1,4 @@
-package com.example.counters
+package com.alexandre.counters
 
 import android.content.Context
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule

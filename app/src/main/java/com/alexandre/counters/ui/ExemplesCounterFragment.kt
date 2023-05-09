@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.counters.R
 import com.example.counters.databinding.FragmentExemplosCounterBinding
 import com.alexandre.counters.ui.adapter.ExemplosCounterAdpater
-import com.example.counters.utils.Navigate
+import com.alexandre.counters.utils.Navigate
 
 class ExemplesCounterFragment : Fragment(R.layout.fragment_exemplos_counter) {
 

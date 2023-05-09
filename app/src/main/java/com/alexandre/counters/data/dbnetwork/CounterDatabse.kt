@@ -1,6 +1,5 @@
 package com.alexandre.counters.data.dbnetwork
 
-
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.alexandre.counters.data.dbnetwork.dto.CountersDTO

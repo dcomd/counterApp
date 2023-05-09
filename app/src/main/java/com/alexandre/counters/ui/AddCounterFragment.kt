@@ -7,7 +7,7 @@ import android.widget.TextView
 import com.example.counters.R
 import com.example.counters.databinding.FragmentAddCounterBinding
 import com.alexandre.counters.domain.model.Counters
-import com.example.counters.utils.Navigate
+import com.alexandre.counters.utils.Navigate
 import com.alexandre.counters.presentation.viewModel.CounterViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
