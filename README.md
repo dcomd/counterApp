@@ -3,7 +3,7 @@
 1. Clone repository
 2. Start server
    ```
-   $ cd server
+   $ cd server on the root of the project
    $ npm install
    $ npm start
    ```
@@ -36,4 +36,7 @@ This is the data layer, it does not contain any business rules, it is responsibl
 
 - **Repository**: It is just a composition of local or remote data sources, the interfaces on those are from the _domain_ module.
 - **DataSource**: It is responsible to talk with the remote server or local database.
+
+###
+![.](readme/alexandre.gif)
 
